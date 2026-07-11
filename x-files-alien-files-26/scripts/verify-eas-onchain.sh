@@ -37,6 +37,9 @@ WITNESS_RAW="$(query_uid "$WITNESS_UID")" || fail "witness UID query failed"
 [[ -n "$GENESIS_RAW" ]] || fail "empty genesis response"
 [[ -n "$WITNESS_RAW" ]] || fail "empty witness response"
 
+grep -qi "${GENESIS_UID#0x}" <<<"$GENESIS_RAW" || fail "genesis UID not returned"
+grep -qi "${WITNESS_UID#0x}" <<<"$WITNESS_RAW" || fail "witness UID not returned"
+
 {
   echo "ONCHAIN_EAS_REPLAY_V1"
   echo "STATUS=OBSERVED"
@@ -50,6 +53,7 @@ WITNESS_RAW="$(query_uid "$WITNESS_UID")" || fail "witness UID query failed"
   echo "WITNESS_RAW=$WITNESS_RAW"
   echo "RPC_QUERY=OBSERVED"
   echo "UID_RESPONSES=OBSERVED"
+  echo "UID_IDENTITY_MATCH=TRUE"
   echo "SCHEMA_MATCH=PENDING"
   echo "ATTESTER_MATCH=PENDING"
   echo "RECIPIENT_MATCH=PENDING"
