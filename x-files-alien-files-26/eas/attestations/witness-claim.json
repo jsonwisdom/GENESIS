@@ -1,0 +1,14 @@
+{
+  "uid": "0x51b2e15b67a54d0600721dc7e2980d5c6a81e443746b77b179e87f1632ed75f9",
+  "schema_uid": "0x5e9141f023269a24ef29eb14428376cd0fa7687b384b6c0ac1cd0847240ea384",
+  "schema_number": 1685,
+  "attester": "0xC345B26094c63C69222Ee775189a3d3eaead5a84",
+  "recipient": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "transaction_hash": "0x93f6634e5e482083c3e3a03aeddc27a72188dc2b5d544c9f036d31202b6b5525",
+  "revocable": true,
+  "revoked": false,
+  "referenced_attestation": null,
+  "refuid_bound": false,
+  "observation_status": "DECLARED_FROM_EASSCAN_OUTPUT",
+  "authority": false
+}
