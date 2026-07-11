@@ -5,6 +5,7 @@ on:
     paths:
       - 'x-files-alien-files-26/**'
       - '.github/workflows/verify-xfa26-package.yml'
+      - '.github/workflows/replay-eas-base.yml'
   workflow_dispatch:
 
 permissions:
@@ -52,6 +53,32 @@ jobs:
       - name: Emit narrow status
         run: |
           echo 'PACKAGE_HASH_REPRODUCTION=PASS'
-          echo 'ONCHAIN_EAS_REPLAY=NOT_TESTED'
+          echo 'ONCHAIN_EAS_REPLAY=SEPARATE_JOB'
           echo 'ZORA_PACKAGE_BINDING=NOT_TESTED'
           echo 'AUTHORITY=false'
+
+  replay-eas:
+    runs-on: ubuntu-latest
+    env:
+      BASE_RPC_URL: https://mainnet.base.org
+      EAS_CONTRACT: 0x4200000000000000000000000000000000000021
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Execute Base EAS replay
+        working-directory: x-files-alien-files-26
+        run: |
+          chmod +x scripts/verify-eas-onchain.sh
+          scripts/verify-eas-onchain.sh
+
+      - name: Upload replay receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eas-onchain-replay-${{ github.sha }}
+          path: x-files-alien-files-26/receipts/eas-onchain-replay-0001.log
+          if-no-files-found: error
