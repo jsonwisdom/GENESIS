@@ -1,0 +1,1 @@
+{"version":"ALMS_MERKLE_V1","leaf_order":"lexicographic_utf8_path","leaf_domain":"ALMS_LEAF_V1","node_domain":"ALMS_NODE_V1","odd_rule":"PROMOTE_LAST","files":["AUTHORITY","README.md","state/boot.json"],"authority":false}
