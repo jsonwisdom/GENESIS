@@ -55,6 +55,21 @@ AUTHORITY = FALSE
 
 “CIA Jay” means **Central Casting Intelligently** in this fictional creative framework. It does not claim affiliation with, employment by, endorsement from, or access to the United States Central Intelligence Agency or any other government institution.
 
+## GB Switch — British membrane
+
+```text
+GB_SWITCH = ON
+GB_CHARACTER_LAYER = GRAY_BABY
+GB_CULTURAL_REPLAY_LAYER = GREAT_BRITAIN
+MEMBRANE = BRITISH
+CHILDREN_FIRST = TRUE
+AUTHORITY = FALSE
+```
+
+The CrissCross switch permits a deliberate double reading of “GB”: **Gray Baby** inside the character universe and **Great Britain** inside a British cultural-replay lens. The membrane may support British settings, storytelling traditions, film history, civic questions, vocabulary, and family localization.
+
+The switch does not claim affiliation with, employment by, access to, endorsement from, or authority of the United Kingdom government, British intelligence services, the Royal Family, or any British institution. “British” is a declared cultural and localization membrane, not a nationality claim about the character and not institutional provenance.
+
 ## Media
 
 - File: `media/GB-009_REPLAY_RESTON.png`
