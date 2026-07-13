@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "researchId": "SOD-125",
+  "program": "CATEGORIZED_SCALAR",
+  "title": "The Categorized Scalar",
+  "version": "v0.1.0",
+  "identity": {
+    "ensRoot": "jaywisdom.eth",
+    "basename": "jaywisdom.base.eth",
+    "attester": "0xC345B26094c63C69222Ee775189a3d3eaeaad5a84"
+  },
+  "repository": {
+    "url": "https://github.com/jsonwisdom/GENESIS",
+    "path": "research/categorized-scalar/sod-125/",
+    "commitSha1": null
+  },
+  "artifact": {
+    "path": null,
+    "sha256": null,
+    "doi": null
+  },
+  "eas": {
+    "network": "base",
+    "chainId": 8453,
+    "schemaNumber": 1692,
+    "schemaUid": "0x57db23bff29b9338bbcedf054e94a4bc6666171f04fe9c3a21d7b5bb47133c5e",
+    "attestationUid": null,
+    "transactionHash": null
+  },
+  "state": {
+    "researchNamespace": "DEFINED",
+    "canonicalArtifact": "ABSENT",
+    "artifactHash": "UNRESOLVED",
+    "doi": "UNRESOLVED",
+    "attestation": "NOT_CREATED",
+    "scientificValidity": "UNRESOLVED",
+    "authority": false
+  }
+}
