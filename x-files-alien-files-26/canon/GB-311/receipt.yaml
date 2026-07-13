@@ -1,0 +1,65 @@
+gb_id: GB-311
+title: "Receipt Baby vs. Hype Baby"
+series: "Gray Baby × Boomer Baby"
+status: CANDIDATE_FOR_CANON
+authority: FALSE
+claim_status: "Editorial interpretation"
+artifact_type: "Satirical Editorial Card"
+format: "50/50 Editorial Composite"
+evidence_tier: "1_visual_only"
+
+lineage:
+  canon_root: GB-001
+  parent: GB-310
+
+archetypes_introduced:
+  - Receipt Baby
+  - Hype Baby
+
+archetypes_used:
+  - Receipt Baby
+  - Hype Baby
+
+series_principle: "Verification > Narrative"
+
+narrative_summary: >-
+  Receipt Baby arrives with receipts, timestamps, reproducible evidence,
+  and an audit trail. Hype Baby arrives with gradients, engagement,
+  confidence, and Soon™. Both think they won the thread. Only one leaves
+  an evidence trail.
+
+tagline: "One brings receipts. One brings reach."
+
+image:
+  observation_status: repository_bound
+  path: x-files-alien-files-26/canon/GB-311/media/gb-311-receipt-baby-vs-hype-baby.png
+  format: PNG
+  dimensions: 1024x1536
+  sha256: 973636f7470f240ec25da7722eaa063bcc17448e537e0db860a33ca667001cec
+  repository_media_present: true
+  external_binding: repository_commit
+  media_commit: b2631876e2859abd0b19b4f0b410c0522fff7bb5
+  immutability_claim: false
+
+promotion_gates:
+  repository_receipt_present: true
+  repository_media_present: true
+  local_image_hash_reported: true
+  image_hash_independently_recomputed_in_repository: true
+  ipfs_binding: pending
+  zora_receipt: pending
+  farcaster_cast_hash: pending
+  canon_promotion: pending
+
+governance_boundary: >-
+  This receipt binds GB-311 candidate metadata to image bytes committed in
+  the repository at media_commit. The repository binding permits byte-level
+  replay of the recorded SHA-256. No IPFS, Zora, Farcaster, ownership,
+  factual authority, or canon-promotion claim is made.
+
+repository_anchor:
+  repository: jsonwisdom/GENESIS
+  branch: gb-311-three-layer-proposal
+  base_commit: 41b657661654a70e1e5bbb82358b4e72ef107b88
+  media_commit: b2631876e2859abd0b19b4f0b410c0522fff7bb5
+  path: x-files-alien-files-26/canon/GB-311/receipt.yaml
