@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "researchId": "SOD-125",
   "program": "CATEGORIZED_SCALAR",
   "title": "The Categorized Scalar",
@@ -7,32 +7,35 @@
   "identity": {
     "ensRoot": "jaywisdom.eth",
     "basename": "jaywisdom.base.eth",
-    "attester": "0xC345B26094c63C69222Ee775189a3d3eaeaad5a84"
+    "attester": "0xC345B26094c63C69222Ee775189a3d3eaead5a84"
   },
   "repository": {
     "url": "https://github.com/jsonwisdom/GENESIS",
     "path": "research/categorized-scalar/sod-125/",
-    "commitSha1": null
+    "commitA": "f22d8241a81ec0d4cd63962d5ef5b28c436a4240"
   },
   "artifact": {
-    "path": null,
-    "sha256": null,
-    "doi": null
+    "path": "research/categorized-scalar/sod-125/SOD-125-v0.1.0.pdf",
+    "sha256": "47158b8fcb6bbb7ca25ac8742d0c8c6c5fc2e8d89c0c8f9c68e989fe886d505a",
+    "doi": "pending"
   },
   "eas": {
     "network": "base",
     "chainId": 8453,
     "schemaNumber": 1692,
     "schemaUid": "0x57db23bff29b9338bbcedf054e94a4bc6666171f04fe9c3a21d7b5bb47133c5e",
-    "attestationUid": null,
-    "transactionHash": null
+    "attestationUid": "0x50410cc36880b25dcfc164e034a2457f7797c6abdd959cdea8f828ddbca5c90c",
+    "transactionHash": "0xbd9dad0f59b800f52c448977a1f6ff3807093970d0e35a5840f8436f6884d2b2",
+    "blockNumber": null,
+    "observationStatus": "USER_REPORTED_PENDING_INDEPENDENT_REPLAY"
   },
   "state": {
     "researchNamespace": "DEFINED",
-    "canonicalArtifact": "ABSENT",
-    "artifactHash": "UNRESOLVED",
-    "doi": "UNRESOLVED",
-    "attestation": "NOT_CREATED",
+    "canonicalArtifact": "COMMITTED",
+    "artifactHash": "BOUND_TO_COMMIT_A",
+    "doi": "PENDING",
+    "attestation": "RECORDED_USER_REPORTED",
+    "replay": "PENDING_INDEPENDENT_VERIFICATION",
     "scientificValidity": "UNRESOLVED",
     "authority": false
   }
