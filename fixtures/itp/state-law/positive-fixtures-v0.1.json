@@ -1,0 +1,24 @@
+[
+  {
+    "name": "POS-STATE-001",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e1", "trajectory_id": "traj1"},
+      {"event_id": "e3", "type": "DECISION", "sequence": 3, "timestamp": "2026-07-13T03:02:00Z", "parent_id": "e2", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": true
+  },
+  {
+    "name": "POS-STATE-002",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T04:00:00Z", "trajectory_id": "traj2"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T04:01:00Z", "parent_id": "e1", "trajectory_id": "traj2"},
+      {"event_id": "e3", "type": "PRESSURE", "sequence": 3, "timestamp": "2026-07-13T04:02:00Z", "parent_id": "e2", "trajectory_id": "traj2"},
+      {"event_id": "e4", "type": "DECISION", "sequence": 4, "timestamp": "2026-07-13T04:03:00Z", "parent_id": "e3", "trajectory_id": "traj2"},
+      {"event_id": "e5", "type": "DRIFT", "sequence": 5, "timestamp": "2026-07-13T04:04:00Z", "parent_id": "e4", "trajectory_id": "traj2"},
+      {"event_id": "e6", "type": "RECEIPT", "sequence": 6, "timestamp": "2026-07-13T04:05:00Z", "parent_id": "e5", "trajectory_id": "traj2"},
+      {"event_id": "e7", "type": "OUTCOME", "sequence": 7, "timestamp": "2026-07-13T04:06:00Z", "parent_id": "e6", "trajectory_id": "traj2"}
+    ],
+    "expected_valid": true
+  }
+]
