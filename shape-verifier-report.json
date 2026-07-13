@@ -1,7 +1,3 @@
-
-> itp-shape-verifier@0.1.0 test:shape
-> node verifier/shape-verifier-v0.1.js
-
 {
   "verifier": "ITP_SHAPE_VERIFIER_V0_1",
   "scope": "SHAPE_LAW_ONLY",
