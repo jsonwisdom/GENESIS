@@ -1,0 +1,21 @@
+{
+  "artifact": "the-state-law-threshold-widescreen-v0.1.png",
+  "title": "The State-Law Threshold",
+  "media_type": "image/png",
+  "dimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "size_bytes": 2152219,
+  "sha256": "e6ecf969c0240025e4a3133e9c5d451590ccd0ac97485035e66dcc69054b5aac",
+  "derived_from_commit": "8bcdb11c66363e17ea44701382bcfd4650229123",
+  "phase": "ITP_STATE_LAW_PHASE_2",
+  "phase_result": {
+    "trajectory_count": 14,
+    "passed_count": 14,
+    "failed_count": 0
+  },
+  "replay_executed": false,
+  "payload_recomputation_executed": false,
+  "authority": false
+}
