@@ -1,0 +1,116 @@
+[
+  {
+    "name": "NEG-STATE-001-duplicate-event-id",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e1", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e1", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V003_DUPLICATE_EVENT_ID"
+  },
+  {
+    "name": "NEG-STATE-002-no-origin",
+    "trajectory": [
+      {"event_id": "e1", "type": "OBSERVATION", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V014_INVALID_ORIGIN_COUNT"
+  },
+  {
+    "name": "NEG-STATE-003-multiple-origins",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "ORIGIN", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V014_INVALID_ORIGIN_COUNT"
+  },
+  {
+    "name": "NEG-STATE-004-origin-not-first",
+    "trajectory": [
+      {"event_id": "e1", "type": "OBSERVATION", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "ORIGIN", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V007_SEQUENCE_NOT_CONTIGUOUS"
+  },
+  {
+    "name": "NEG-STATE-005-parent-missing",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "missing", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V005_PARENT_NOT_FOUND"
+  },
+  {
+    "name": "NEG-STATE-006-parent-after-child",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e3", "trajectory_id": "traj1"},
+      {"event_id": "e3", "type": "DECISION", "sequence": 3, "timestamp": "2026-07-13T03:02:00Z", "parent_id": "e1", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V006_PARENT_NOT_EARLIER"
+  },
+  {
+    "name": "NEG-STATE-007-sequence-gap",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e1", "trajectory_id": "traj1"},
+      {"event_id": "e3", "type": "DECISION", "sequence": 4, "timestamp": "2026-07-13T03:02:00Z", "parent_id": "e2", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V007_SEQUENCE_NOT_CONTIGUOUS"
+  },
+  {
+    "name": "NEG-STATE-008-sequence-duplicate",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e1", "trajectory_id": "traj1"},
+      {"event_id": "e3", "type": "DECISION", "sequence": 2, "timestamp": "2026-07-13T03:02:00Z", "parent_id": "e2", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V007_SEQUENCE_NOT_CONTIGUOUS"
+  },
+  {
+    "name": "NEG-STATE-009-time-regression",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T02:59:00Z", "parent_id": "e1", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V008_TIMESTAMP_REGRESSION"
+  },
+  {
+    "name": "NEG-STATE-010-trajectory-mismatch",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e3", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V005_PARENT_NOT_FOUND"
+  },
+  {
+    "name": "NEG-STATE-011-fork",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e1", "trajectory_id": "traj1"},
+      {"event_id": "e3", "type": "DECISION", "sequence": 3, "timestamp": "2026-07-13T03:02:00Z", "parent_id": "e1", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V017_FORK_NOT_ALLOWED"
+  },
+  {
+    "name": "NEG-STATE-012-cycle",
+    "trajectory": [
+      {"event_id": "e1", "type": "ORIGIN", "sequence": 1, "timestamp": "2026-07-13T03:00:00Z", "trajectory_id": "traj1"},
+      {"event_id": "e2", "type": "OBSERVATION", "sequence": 2, "timestamp": "2026-07-13T03:01:00Z", "parent_id": "e1", "trajectory_id": "traj1"},
+      {"event_id": "e3", "type": "DECISION", "sequence": 3, "timestamp": "2026-07-13T03:02:00Z", "parent_id": "e2", "trajectory_id": "traj1"},
+      {"event_id": "e4", "type": "DRIFT", "sequence": 5, "timestamp": "2026-07-13T03:04:00Z", "parent_id": "e3", "trajectory_id": "traj1"},
+      {"event_id": "e5", "type": "OBSERVATION", "sequence": 4, "timestamp": "2026-07-13T03:03:00Z", "parent_id": "e4", "trajectory_id": "traj1"}
+    ],
+    "expected_valid": false,
+    "expected_error": "V006_PARENT_NOT_EARLIER"
+  }
+]
