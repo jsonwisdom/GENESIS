@@ -5,6 +5,13 @@ function loadFixtures(filePath) {
   return JSON.parse(data);
 }
 
+function isCanonicalTimestamp(value) {
+  if (typeof value !== 'string') return false;
+  const pattern =
+    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/;
+  return pattern.test(value) && Number.isFinite(Date.parse(value));
+}
+
 function validateState(trajectory) {
   if (!Array.isArray(trajectory) || trajectory.length === 0) {
     return { valid: false, error: 'V001_EMPTY_INPUT' };
@@ -12,7 +19,7 @@ function validateState(trajectory) {
 
   const trajectoryIds = new Set(trajectory.map(event => event.trajectory_id));
   if (trajectoryIds.size !== 1) {
-    return { valid: false, error: 'V015_TRAJECTORY_MISMATCH' };
+    return { valid: false, error: 'V016_TRAJECTORY_ID_MISMATCH' };
   }
 
   const eventIds = new Set();
@@ -21,6 +28,12 @@ function validateState(trajectory) {
       return { valid: false, error: 'V003_DUPLICATE_EVENT_ID' };
     }
     eventIds.add(event.event_id);
+  }
+
+  for (const event of trajectory) {
+    if (!isCanonicalTimestamp(event.timestamp)) {
+      return { valid: false, error: 'V015_INVALID_TIMESTAMP_FORMAT' };
+    }
   }
 
   const origins = trajectory.filter(event => event.type === 'ORIGIN');
@@ -55,7 +68,7 @@ function validateState(trajectory) {
     if (parent.sequence >= event.sequence) {
       return { valid: false, error: 'V006_PARENT_NOT_EARLIER' };
     }
-    if (new Date(event.timestamp) < new Date(parent.timestamp)) {
+    if (Date.parse(event.timestamp) < Date.parse(parent.timestamp)) {
       return { valid: false, error: 'V008_TIMESTAMP_REGRESSION' };
     }
 
