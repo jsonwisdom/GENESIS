@@ -1,0 +1,75 @@
+{
+  "schema": "gray-baby-memory-lattice/v1",
+  "index_not_canon": true,
+  "authority": false,
+  "replay_state": "STASIS",
+  "identity_anchor": {
+    "name": "jaywisdom.base.eth",
+    "claim": "origin anchor only; not proof of control or authority"
+  },
+  "branch": "gray-baby-gb013-replay-threshold",
+  "binding_commit": "fdd027cd042b7b845ecb3d18f33615b69b818715",
+  "rules": [
+    "INDEX != CANON",
+    "CANON_CHANGE = HUMAN_APPROVED ONLY",
+    "INFERENCE = LABELED",
+    "ASSET_MUTATION = FALSE"
+  ],
+  "nodes": [
+    {
+      "id": "GB-006",
+      "title": "Who Named the Model?",
+      "relation": "predecessor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-007",
+      "title": "Face Before File",
+      "relation": "predecessor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-008",
+      "title": "The Child Owns the Creative Memory",
+      "relation": "run-a-anchor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-009",
+      "title": "Gray Archivist / Replay Reston",
+      "relation": "predecessor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-010",
+      "title": "Revision Boundary",
+      "relation": "predecessor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-011",
+      "title": "Enforcement Gap",
+      "relation": "predecessor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-012",
+      "title": "Continuity Baby / Consent Gap",
+      "relation": "immediate-predecessor",
+      "source_status": "INDEXED_TITLE_ONLY"
+    },
+    {
+      "id": "GB-013",
+      "title": "Replay Threshold",
+      "relation": "current-node",
+      "artifact": {
+        "path": "x-files-alien-files-26/canon/gb-013/media/GB-013_GRAY_BABY_COVER.jpeg",
+        "sha256": "3c735f7f6590eed640ab7da917f3f27c24b74aea81d31f85ac73037838785fca",
+        "bytes": 437092,
+        "mime_type": "image/jpeg"
+      },
+      "receipt": "x-files-alien-files-26/canon/gb-013/receipts/cover-art.json",
+      "source_status": "REMOTE_BOUND"
+    }
+  ]
+}
