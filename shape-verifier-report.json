@@ -1,0 +1,172 @@
+
+> itp-shape-verifier@0.1.0 test:shape
+> node verifier/shape-verifier-v0.1.js
+
+{
+  "verifier": "ITP_SHAPE_VERIFIER_V0_1",
+  "scope": "SHAPE_LAW_ONLY",
+  "replay_executed": false,
+  "payload_recomputation_executed": false,
+  "authority": false,
+  "fixture_count": 11,
+  "passed_count": 11,
+  "failed_count": 0,
+  "results": [
+    {
+      "set": "negative",
+      "name": "NEG-001-unknown-field",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "",
+          "schemaPath": "#/additionalProperties",
+          "keyword": "additionalProperties",
+          "message": "must NOT have additional properties"
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-002-invalid-event-type",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "/event_type",
+          "schemaPath": "#/properties/event_type/enum",
+          "keyword": "enum",
+          "message": "must be equal to one of the allowed values"
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-003-authority-true",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "/authority",
+          "schemaPath": "#/properties/authority/const",
+          "keyword": "const",
+          "message": "must be equal to constant"
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-004-origin-non-null-parent",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "/parent_event_id",
+          "schemaPath": "#/allOf/0/then/properties/parent_event_id/type",
+          "keyword": "type",
+          "message": "must be null"
+        },
+        {
+          "instancePath": "",
+          "schemaPath": "#/allOf/0/if",
+          "keyword": "if",
+          "message": "must match \"then\" schema"
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-005-non-origin-null-parent",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "/parent_event_id",
+          "schemaPath": "#/allOf/0/else/properties/parent_event_id/type",
+          "keyword": "type",
+          "message": "must be string"
+        },
+        {
+          "instancePath": "",
+          "schemaPath": "#/allOf/0/if",
+          "keyword": "if",
+          "message": "must match \"else\" schema"
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-006-malformed-sha256",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "/payload_sha256",
+          "schemaPath": "#/properties/payload_sha256/pattern",
+          "keyword": "pattern",
+          "message": "must match pattern \"^[0-9a-f]{64}$\""
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-007-missing-required",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "",
+          "schemaPath": "#/required",
+          "keyword": "required",
+          "message": "must have required property 'summary'"
+        }
+      ]
+    },
+    {
+      "set": "negative",
+      "name": "NEG-008-invalid-disclosure",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "errors": [
+        {
+          "instancePath": "/disclosure_policy",
+          "schemaPath": "#/properties/disclosure_policy/enum",
+          "keyword": "enum",
+          "message": "must be equal to one of the allowed values"
+        }
+      ]
+    },
+    {
+      "set": "positive",
+      "name": "POS-001-valid-public-origin",
+      "expected_valid": true,
+      "actual_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "set": "positive",
+      "name": "POS-002-valid-private-observation",
+      "expected_valid": true,
+      "actual_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "set": "positive",
+      "name": "POS-003-valid-encrypted-receipt",
+      "expected_valid": true,
+      "actual_valid": true,
+      "passed": true,
+      "errors": []
+    }
+  ]
+}
