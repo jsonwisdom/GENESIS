@@ -31,32 +31,35 @@ narrative_summary: >-
 tagline: "One brings receipts. One brings reach."
 
 image:
-  observation_status: locally_verified
+  observation_status: repository_bound
+  path: x-files-alien-files-26/canon/GB-311/media/gb-311-receipt-baby-vs-hype-baby.png
   format: PNG
   dimensions: 1024x1536
-  sha256: 72e6c912a65ab2999af669696d7616449a99d29afad36b06d77d646f30afa3bc
-  repository_media_present: false
-  external_binding: pending
+  sha256: 973636f7470f240ec25da7722eaa063bcc17448e537e0db860a33ca667001cec
+  repository_media_present: true
+  external_binding: repository_commit
+  media_commit: b2631876e2859abd0b19b4f0b410c0522fff7bb5
   immutability_claim: false
 
 promotion_gates:
   repository_receipt_present: true
-  repository_media_present: false
+  repository_media_present: true
   local_image_hash_reported: true
-  image_hash_independently_recomputed_in_repository: false
+  image_hash_independently_recomputed_in_repository: true
   ipfs_binding: pending
   zora_receipt: pending
   farcaster_cast_hash: pending
   canon_promotion: pending
 
 governance_boundary: >-
-  This receipt records the GB-311 candidate metadata and a reported local
-  image hash. The image bytes are not included in this commit, so the hash
-  is not independently replayable from the repository. No IPFS, Zora,
-  Farcaster, immutability, ownership, or authority claim is made.
+  This receipt binds GB-311 candidate metadata to image bytes committed in
+  the repository at media_commit. The repository binding permits byte-level
+  replay of the recorded SHA-256. No IPFS, Zora, Farcaster, ownership,
+  factual authority, or canon-promotion claim is made.
 
 repository_anchor:
   repository: jsonwisdom/GENESIS
   branch: gb-311-three-layer-proposal
   base_commit: 41b657661654a70e1e5bbb82358b4e72ef107b88
+  media_commit: b2631876e2859abd0b19b4f0b410c0522fff7bb5
   path: x-files-alien-files-26/canon/GB-311/receipt.yaml
