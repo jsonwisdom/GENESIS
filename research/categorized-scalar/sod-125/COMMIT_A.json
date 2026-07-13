@@ -1,0 +1,14 @@
+{
+  "document": "SOD-125",
+  "version": "v0.1.0",
+  "status": "PREPUBLICATION_WORKING_DRAFT",
+  "artifact_path": "research/categorized-scalar/sod-125/SOD-125-v0.1.0.pdf",
+  "source_path": "research/categorized-scalar/sod-125/source/SOD-125-source.md",
+  "artifact_sha256": "47158b8fcb6bbb7ca25ac8742d0c8c6c5fc2e8d89c0c8f9c68e989fe886d505a",
+  "source_sha256": "8111062dfc70a45b96f0cc15b3ab57e380189e8d657ce49ba9717c1060f92dc6",
+  "timestamp": "2026-07-12T23:28:05Z",
+  "message": "Initial prepublication seed of SOD-125",
+  "doi": "pending",
+  "eas_attestation": "NOT_CREATED",
+  "authority": false
+}
