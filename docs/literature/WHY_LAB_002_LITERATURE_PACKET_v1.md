@@ -1,3 +1,5 @@
+Rubinstein et al. (2001) — Executive Control of Cognitive Processes in Task Switching. Journal of Experimental Psychology: Human Perception and Performance, 27(4), 763–797. DOI: 10.1037/0096-1523.27.4.763. [Two-stage model: goal shifting + rule activation. Switch costs measured in ms, modulated by complexity/cuing. No fixed 40% productivity constant.] 
+
 Deshmukh and Pfleging — 2025
 
 Modality-switch costs can be asymmetric.
