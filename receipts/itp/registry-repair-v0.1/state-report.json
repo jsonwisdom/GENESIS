@@ -1,0 +1,141 @@
+{
+  "verifier": "ITP_STATE_VERIFIER_V0_1",
+  "scope": "STATE_LAW_ONLY",
+  "shape_validation_required": true,
+  "trajectory_count": 16,
+  "passed_count": 16,
+  "failed_count": 0,
+  "replay_executed": false,
+  "payload_recomputation_executed": false,
+  "authority": false,
+  "results": [
+    {
+      "name": "POS-STATE-001",
+      "expected_valid": true,
+      "actual_valid": true,
+      "expected_error": null,
+      "actual_error": null,
+      "passed": true
+    },
+    {
+      "name": "POS-STATE-002",
+      "expected_valid": true,
+      "actual_valid": true,
+      "expected_error": null,
+      "actual_error": null,
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-001-duplicate-event-id",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V003_DUPLICATE_EVENT_ID",
+      "actual_error": "V003_DUPLICATE_EVENT_ID",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-002-no-origin",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V014_INVALID_ORIGIN_COUNT",
+      "actual_error": "V014_INVALID_ORIGIN_COUNT",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-003-multiple-origins",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V014_INVALID_ORIGIN_COUNT",
+      "actual_error": "V014_INVALID_ORIGIN_COUNT",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-004-origin-not-first",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+      "actual_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-005-parent-missing",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V005_PARENT_NOT_FOUND",
+      "actual_error": "V005_PARENT_NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-006-parent-after-child",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V006_PARENT_NOT_EARLIER",
+      "actual_error": "V006_PARENT_NOT_EARLIER",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-007-sequence-gap",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+      "actual_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-008-sequence-duplicate",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+      "actual_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-009-time-regression",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V008_TIMESTAMP_REGRESSION",
+      "actual_error": "V008_TIMESTAMP_REGRESSION",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-010-trajectory-mismatch",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V005_PARENT_NOT_FOUND",
+      "actual_error": "V005_PARENT_NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-011-fork",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V017_FORK_NOT_ALLOWED",
+      "actual_error": "V017_FORK_NOT_ALLOWED",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-012-cycle",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V006_PARENT_NOT_EARLIER",
+      "actual_error": "V006_PARENT_NOT_EARLIER",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-013-invalid-timestamp-format",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V015_INVALID_TIMESTAMP_FORMAT",
+      "actual_error": "V015_INVALID_TIMESTAMP_FORMAT",
+      "passed": true
+    },
+    {
+      "name": "NEG-STATE-014-trajectory-id-mismatch",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "V016_TRAJECTORY_ID_MISMATCH",
+      "actual_error": "V016_TRAJECTORY_ID_MISMATCH",
+      "passed": true
+    }
+  ]
+}

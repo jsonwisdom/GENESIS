@@ -1,0 +1,23 @@
+{
+  "receipt": "ITP_REGISTRY_REPAIR_EXECUTION_V0_1",
+  "source_commit": "4efc6c4fd9ae6785f8188a7e4efc2cd299030580",
+  "registry": {
+    "V015": "INVALID_TIMESTAMP_FORMAT",
+    "V016": "TRAJECTORY_ID_MISMATCH"
+  },
+  "state": {
+    "fixture_count": 16,
+    "passed_count": 16,
+    "failed_count": 0,
+    "replay_executed": false
+  },
+  "replay": {
+    "fixture_count": 4,
+    "passed_count": 4,
+    "failed_count": 0,
+    "replay_executed": true
+  },
+  "payload_bytes_read": false,
+  "payload_recomputation_executed": false,
+  "authority": false
+}
