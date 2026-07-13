@@ -1,0 +1,18 @@
+{
+  "name": "itp-shape-verifier",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ITP Shape Law Verifier Phase 1",
+  "main": "verifier/shape-verifier-v0.1.js",
+  "scripts": {
+    "verify": "node verifier/shape-verifier-v0.1.js",
+    "test:shape": "node verifier/shape-verifier-v0.1.js"
+  },
+  "dependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
