@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Intelligence Trajectory Event v0.1",
+  "description": "Canonical event shape for the Intelligence Trajectory Protocol. Shape validation only. Authority remains false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trajectory_id",
+    "event_id",
+    "event_type",
+    "parent_event_id",
+    "sequence",
+    "timestamp",
+    "human_origin",
+    "summary",
+    "payload_sha256",
+    "receipt_refs",
+    "disclosure_policy",
+    "is_simulated",
+    "authority"
+  ],
+  "properties": {
+    "trajectory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "ORIGIN",
+        "OBSERVATION",
+        "PRESSURE",
+        "DECISION",
+        "DRIFT",
+        "RECEIPT",
+        "OUTCOME"
+      ]
+    },
+    "parent_event_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "human_origin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 280
+    },
+    "payload_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "receipt_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "disclosure_policy": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "PRIVATE",
+        "ENCRYPTED"
+      ]
+    },
+    "is_simulated": {
+      "type": "boolean"
+    },
+    "authority": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "ORIGIN"
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_event_id": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "parent_event_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      }
+    }
+  ]
+}
