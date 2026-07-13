@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsonwisdom/GENESIS/schemas/gray-babies/GBCS_v1.schema.json",
+  "title": "Gray Baby Capsule Schema",
+  "description": "Fixture-only narrative provenance schema for replayable Gray Baby and Gray Child story objects. This schema does not establish truth, authority, cryptographic provenance, family history, or repository canon.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gb_id",
+    "label",
+    "parent_id",
+    "narrative_blob",
+    "origin_context",
+    "meta"
+  ],
+  "properties": {
+    "gb_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique capsule identifier. Identity is local to the narrative fixture unless separately bound by evidence."
+    },
+    "label": {
+      "type": "string",
+      "enum": ["GB", "GC"],
+      "description": "Narrative sequence label: Gray Baby or Gray Child."
+    },
+    "parent_id": {
+      "description": "Parent capsule UUID, or null for a declared narrative root. Null must remain an explicit visible gap/root condition and must not trigger inferred ancestry.",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "narrative_blob": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-supplied story content preserved without machine promotion or classification."
+    },
+    "origin_context": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-supplied context describing where the narrative object begins or how it entered the replay corridor."
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "timestamp",
+        "is_simulated",
+        "has_authority"
+      ],
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fixture-supplied narrative timestamp. It is not an observed repository, chain, or execution timestamp unless independently evidenced elsewhere."
+        },
+        "is_simulated": {
+          "const": true,
+          "description": "Hard lock preventing narrative fixtures from being represented as repository canon or real-world observations."
+        },
+        "has_authority": {
+          "const": false,
+          "description": "Hard lock preventing authority promotion."
+        }
+      }
+    }
+  }
+}
