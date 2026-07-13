@@ -1,0 +1,75 @@
+[
+  {
+    "name": "REPLAY-NEG-001-state-prerequisite-failed",
+    "trajectory": [
+      {"event_id":"e1","type":"ORIGIN","sequence":1,"timestamp":"2026-07-13T04:00:00Z","trajectory_id":"traj-replay-neg-001"},
+      {"event_id":"e2","type":"OBSERVATION","sequence":2,"timestamp":"2026-07-13T04:01:00Z","parent_id":"e1","trajectory_id":"traj-replay-neg-001"},
+      {"event_id":"e3","type":"PRESSURE","sequence":3,"timestamp":"2026-07-13T04:02:00Z","parent_id":"e2","trajectory_id":"traj-replay-neg-001"},
+      {"event_id":"e4","type":"DECISION","sequence":4,"timestamp":"2026-07-13T04:03:00Z","parent_id":"e3","trajectory_id":"traj-replay-neg-001"},
+      {"event_id":"e5","type":"DRIFT","sequence":5,"timestamp":"2026-07-13T04:04:00Z","parent_id":"e4","trajectory_id":"traj-replay-neg-001"},
+      {"event_id":"e6","type":"RECEIPT","sequence":6,"timestamp":"2026-07-13T04:05:00Z","parent_id":"e5","trajectory_id":"traj-replay-neg-001"},
+      {"event_id":"e7","type":"OUTCOME","sequence":8,"timestamp":"2026-07-13T04:06:00Z","parent_id":"e6","trajectory_id":"traj-replay-neg-001"}
+    ],
+    "expected": {
+      "state_validation_result":"FAIL",
+      "state_error":"V007_SEQUENCE_NOT_CONTIGUOUS",
+      "verdict":"REPLAY_REJECTED",
+      "reason":"STATE_PREREQUISITE_FAILED",
+      "replay_executed":false,
+      "trace_emitted":false,
+      "payload_bytes_read":false,
+      "payload_recomputation_executed":false,
+      "authority":false
+    }
+  },
+  {
+    "name": "REPLAY-NEG-002-trace-order-mismatch",
+    "trajectory": [
+      {"event_id":"e1","type":"ORIGIN","sequence":1,"timestamp":"2026-07-13T05:00:00Z","trajectory_id":"traj-replay-neg-002"},
+      {"event_id":"e3","type":"PRESSURE","sequence":3,"timestamp":"2026-07-13T05:02:00Z","parent_id":"e2","trajectory_id":"traj-replay-neg-002"},
+      {"event_id":"e2","type":"OBSERVATION","sequence":2,"timestamp":"2026-07-13T05:01:00Z","parent_id":"e1","trajectory_id":"traj-replay-neg-002"},
+      {"event_id":"e4","type":"DECISION","sequence":4,"timestamp":"2026-07-13T05:03:00Z","parent_id":"e3","trajectory_id":"traj-replay-neg-002"},
+      {"event_id":"e5","type":"DRIFT","sequence":5,"timestamp":"2026-07-13T05:04:00Z","parent_id":"e4","trajectory_id":"traj-replay-neg-002"},
+      {"event_id":"e6","type":"RECEIPT","sequence":6,"timestamp":"2026-07-13T05:05:00Z","parent_id":"e5","trajectory_id":"traj-replay-neg-002"},
+      {"event_id":"e7","type":"OUTCOME","sequence":7,"timestamp":"2026-07-13T05:06:00Z","parent_id":"e6","trajectory_id":"traj-replay-neg-002"}
+    ],
+    "expected": {
+      "state_validation_result":"PASS",
+      "canonical_event_ids":["e1","e2","e3","e4","e5","e6","e7"],
+      "supplied_event_ids":["e1","e3","e2","e4","e5","e6","e7"],
+      "verdict":"REPLAY_REJECTED",
+      "reason":"TRACE_ORDER_MISMATCH",
+      "replay_executed":true,
+      "trace_emitted":false,
+      "payload_bytes_read":false,
+      "payload_recomputation_executed":false,
+      "authority":false
+    }
+  },
+  {
+    "name": "REPLAY-NEG-003-transition-continuity-broken",
+    "trajectory": [
+      {"event_id":"e1","type":"ORIGIN","sequence":1,"timestamp":"2026-07-13T06:00:00Z","trajectory_id":"traj-replay-neg-003"},
+      {"event_id":"e2","type":"OBSERVATION","sequence":2,"timestamp":"2026-07-13T06:01:00Z","parent_id":"e1","trajectory_id":"traj-replay-neg-003"},
+      {"event_id":"e3","type":"PRESSURE","sequence":3,"timestamp":"2026-07-13T06:02:00Z","parent_id":"e2","trajectory_id":"traj-replay-neg-003"},
+      {"event_id":"e4","type":"DECISION","sequence":4,"timestamp":"2026-07-13T06:03:00Z","parent_id":"e3","trajectory_id":"traj-replay-neg-003"},
+      {"event_id":"e5","type":"DRIFT","sequence":5,"timestamp":"2026-07-13T06:04:00Z","parent_id":"e4","trajectory_id":"traj-replay-neg-003"},
+      {"event_id":"e6","type":"RECEIPT","sequence":6,"timestamp":"2026-07-13T06:05:00Z","parent_id":"e5","trajectory_id":"traj-replay-neg-003"},
+      {"event_id":"e7","type":"OUTCOME","sequence":7,"timestamp":"2026-07-13T06:06:00Z","parent_id":"e6","trajectory_id":"traj-replay-neg-003"}
+    ],
+    "requested_trace":["e1","e2","e3","e5","e6","e7"],
+    "expected": {
+      "state_validation_result":"PASS",
+      "canonical_event_ids":["e1","e2","e3","e4","e5","e6","e7"],
+      "verdict":"REPLAY_REJECTED",
+      "reason":"TRANSITION_CONTINUITY_BROKEN",
+      "failure_transition":{"from_event_id":"e3","to_event_id":"e5","required_parent_id":"e4","actual_parent_id":"e4"},
+      "replay_executed":true,
+      "trace_emitted":true,
+      "accepted_step_count":3,
+      "payload_bytes_read":false,
+      "payload_recomputation_executed":false,
+      "authority":false
+    }
+  }
+]
