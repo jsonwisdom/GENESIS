@@ -1,0 +1,55 @@
+{
+  "schema": "GENESIS_VISUAL_SIDECAR_MANIFEST_V1",
+  "title": "THE STATE-LAW | ITP STATE TRAJECTORY VERIFICATION LAW — REPAIRED REGISTRY EDITION (16/16)",
+  "artifact_path": "docs/visuals/state-law/state-law-v2-repaired-registry.png",
+  "artifact_sha256": "973636f7470f240ec25da7722eaa063bcc17448e537e0db860a33ca667001cec",
+  "artifact_bytes": 2187899,
+  "artifact_commit": "59c176799608d9e695c151ba1389f61e376dc376",
+  "source_repair_commit": "4efc6c4fd9ae6785f8188a7e4efc2cd299030580",
+  "execution_receipt_commit": "70d2871ddaa3196bf08290d72f3b2045d0cb3b02",
+  "registry_scope": "ACTIVE STATE-LAW REGISTRY + RETIRED V018 MARKER",
+  "verification_result": {
+    "trajectories": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "human_reviewed_assertions": [
+    {
+      "assertion": "Poster identifies the repaired registry edition.",
+      "status": "REVIEWED_TRUE"
+    },
+    {
+      "assertion": "Poster displays 16 / 16 PASSED.",
+      "status": "REVIEWED_TRUE"
+    },
+    {
+      "assertion": "Poster displays V015 invalid timestamp format.",
+      "status": "REVIEWED_TRUE"
+    },
+    {
+      "assertion": "Poster displays V016 trajectory ID mismatch.",
+      "status": "REVIEWED_TRUE"
+    },
+    {
+      "assertion": "Poster displays V017 fork not allowed.",
+      "status": "REVIEWED_TRUE"
+    },
+    {
+      "assertion": "Poster displays a retired V018 cycle marker.",
+      "status": "REVIEWED_TRUE"
+    },
+    {
+      "assertion": "Poster footer commit hashes match the canonical source repair and execution receipt commits.",
+      "status": "HUMAN_REVIEW_REQUIRED"
+    }
+  ],
+  "pixel_integrity": {
+    "tamper_evident": true,
+    "machine_verified": true
+  },
+  "semantic_integrity": {
+    "machine_verified": false,
+    "human_review_required": true
+  },
+  "authority": false
+}
