@@ -1,0 +1,57 @@
+[
+  {
+    "name": "PAYLOAD-POS-001-exact-raw-bytes",
+    "payload_path": "fixtures/itp/payload-integrity/bytes/payload-positive-v0.1.bin",
+    "algorithm": "sha256",
+    "expected_size": 19,
+    "expected_digest": "40cf0528d1a2d21ca3fa4f87a49d6ed213bf4847730b5ec0308e6f8eddbe1955",
+    "expected_valid": true,
+    "expected_error": null,
+    "expected_payload_bytes_read": true,
+    "expected_recomputation_executed": true
+  },
+  {
+    "name": "PAYLOAD-NEG-001-missing-file",
+    "payload_path": "fixtures/itp/payload-integrity/bytes/does-not-exist.bin",
+    "algorithm": "sha256",
+    "expected_size": 19,
+    "expected_digest": "40cf0528d1a2d21ca3fa4f87a49d6ed213bf4847730b5ec0308e6f8eddbe1955",
+    "expected_valid": false,
+    "expected_error": "P001_PAYLOAD_FILE_NOT_FOUND",
+    "expected_payload_bytes_read": false,
+    "expected_recomputation_executed": false
+  },
+  {
+    "name": "PAYLOAD-NEG-002-unsupported-algorithm",
+    "payload_path": "fixtures/itp/payload-integrity/bytes/payload-positive-v0.1.bin",
+    "algorithm": "sha512",
+    "expected_size": 19,
+    "expected_digest": "40cf0528d1a2d21ca3fa4f87a49d6ed213bf4847730b5ec0308e6f8eddbe1955",
+    "expected_valid": false,
+    "expected_error": "P002_UNSUPPORTED_DIGEST_ALGORITHM",
+    "expected_payload_bytes_read": false,
+    "expected_recomputation_executed": false
+  },
+  {
+    "name": "PAYLOAD-NEG-003-size-mismatch",
+    "payload_path": "fixtures/itp/payload-integrity/bytes/payload-positive-v0.1.bin",
+    "algorithm": "sha256",
+    "expected_size": 20,
+    "expected_digest": "40cf0528d1a2d21ca3fa4f87a49d6ed213bf4847730b5ec0308e6f8eddbe1955",
+    "expected_valid": false,
+    "expected_error": "P003_PAYLOAD_SIZE_MISMATCH",
+    "expected_payload_bytes_read": true,
+    "expected_recomputation_executed": false
+  },
+  {
+    "name": "PAYLOAD-NEG-004-digest-mismatch",
+    "payload_path": "fixtures/itp/payload-integrity/bytes/payload-positive-v0.1.bin",
+    "algorithm": "sha256",
+    "expected_size": 19,
+    "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "expected_valid": false,
+    "expected_error": "P004_PAYLOAD_DIGEST_MISMATCH",
+    "expected_payload_bytes_read": true,
+    "expected_recomputation_executed": true
+  }
+]
