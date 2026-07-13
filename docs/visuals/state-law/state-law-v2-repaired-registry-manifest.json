@@ -40,7 +40,12 @@
     },
     {
       "assertion": "Poster footer commit hashes match the canonical source repair and execution receipt commits.",
-      "status": "HUMAN_REVIEW_REQUIRED"
+      "status": "REVIEWED_TRUE",
+      "review_method": "MANUAL_VISUAL_COMPARISON",
+      "reviewed_by": "Jay Wisdom",
+      "reviewed_at": "2026-07-13",
+      "observed_source_repair_commit": "4efc6c4fd9ae6785f8188a7e4efc2cd299030580",
+      "observed_execution_receipt_commit": "70d2871ddaa3196bf08290d72f3b2045d0cb3b02"
     }
   ],
   "pixel_integrity": {
@@ -49,7 +54,8 @@
   },
   "semantic_integrity": {
     "machine_verified": false,
-    "human_review_required": true
+    "human_review_complete": true,
+    "human_review_required": false
   },
   "authority": false
 }
