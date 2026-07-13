@@ -1,0 +1,12 @@
+{
+  "contract": "0x14a6f025031d401062289dc18c6c95e81220ca69",
+  "chain_id": 8453,
+  "deployment_tx": null,
+  "coin_tx": null,
+  "metadata_uri": null,
+  "package_cid": "bafybeihukshdcu2bts6qwbbpljhpbttvhdp72fdgwnraomhclhjpkjksci",
+  "package_binding_status": "UNOBSERVED",
+  "retrieval_status": "UNOBSERVED",
+  "status": "DECLARED_UNVERIFIED",
+  "authority": false
+}
