@@ -1,0 +1,170 @@
+[
+  {
+    "name": "NEG-001-unknown-field",
+    "expected_valid": false,
+    "expected_constraint": "additionalProperties",
+    "description": "Extra field violates additionalProperties: false",
+    "data": {
+      "trajectory_id": "itp-test-001",
+      "event_id": "123e4567-e89b-12d3-a456-426614174000",
+      "event_type": "ORIGIN",
+      "parent_event_id": null,
+      "sequence": 1,
+      "timestamp": "2026-07-13T08:00:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "Test origin event",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": false,
+      "extra_field": "should_fail"
+    }
+  },
+  {
+    "name": "NEG-002-invalid-event-type",
+    "expected_valid": false,
+    "expected_constraint": "enum",
+    "description": "Event type not in canonical enum",
+    "data": {
+      "trajectory_id": "itp-test-002",
+      "event_id": "223e4567-e89b-12d3-a456-426614174001",
+      "event_type": "INVALID_TYPE",
+      "parent_event_id": "123e4567-e89b-12d3-a456-426614174000",
+      "sequence": 2,
+      "timestamp": "2026-07-13T08:01:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "Invalid type test",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": false
+    }
+  },
+  {
+    "name": "NEG-003-authority-true",
+    "expected_valid": false,
+    "expected_constraint": "const",
+    "description": "Authority must be false",
+    "data": {
+      "trajectory_id": "itp-test-003",
+      "event_id": "323e4567-e89b-12d3-a456-426614174002",
+      "event_type": "ORIGIN",
+      "parent_event_id": null,
+      "sequence": 1,
+      "timestamp": "2026-07-13T08:02:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "Authority violation",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": true
+    }
+  },
+  {
+    "name": "NEG-004-origin-non-null-parent",
+    "expected_valid": false,
+    "expected_constraint": "conditional",
+    "description": "ORIGIN must have null parent_event_id",
+    "data": {
+      "trajectory_id": "itp-test-004",
+      "event_id": "423e4567-e89b-12d3-a456-426614174003",
+      "event_type": "ORIGIN",
+      "parent_event_id": "523e4567-e89b-12d3-a456-426614174004",
+      "sequence": 1,
+      "timestamp": "2026-07-13T08:03:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "Origin parent violation",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": false
+    }
+  },
+  {
+    "name": "NEG-005-non-origin-null-parent",
+    "expected_valid": false,
+    "expected_constraint": "conditional",
+    "description": "Non-ORIGIN must have UUID parent",
+    "data": {
+      "trajectory_id": "itp-test-005",
+      "event_id": "623e4567-e89b-12d3-a456-426614174005",
+      "event_type": "OBSERVATION",
+      "parent_event_id": null,
+      "sequence": 2,
+      "timestamp": "2026-07-13T08:04:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "Parent null violation",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": false
+    }
+  },
+  {
+    "name": "NEG-006-malformed-sha256",
+    "expected_valid": false,
+    "expected_constraint": "pattern",
+    "description": "Invalid payload_sha256 pattern",
+    "data": {
+      "trajectory_id": "itp-test-006",
+      "event_id": "723e4567-e89b-12d3-a456-426614174006",
+      "event_type": "ORIGIN",
+      "parent_event_id": null,
+      "sequence": 1,
+      "timestamp": "2026-07-13T08:05:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "SHA violation",
+      "payload_sha256": "invalidhash123",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": false
+    }
+  },
+  {
+    "name": "NEG-007-missing-required",
+    "expected_valid": false,
+    "expected_constraint": "required",
+    "description": "Missing summary field",
+    "data": {
+      "trajectory_id": "itp-test-007",
+      "event_id": "823e4567-e89b-12d3-a456-426614174007",
+      "event_type": "ORIGIN",
+      "parent_event_id": null,
+      "sequence": 1,
+      "timestamp": "2026-07-13T08:06:00Z",
+      "human_origin": "jaywisdom.eth",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "PUBLIC",
+      "is_simulated": true,
+      "authority": false
+    }
+  },
+  {
+    "name": "NEG-008-invalid-disclosure",
+    "expected_valid": false,
+    "expected_constraint": "enum",
+    "description": "Invalid disclosure_policy enum",
+    "data": {
+      "trajectory_id": "itp-test-008",
+      "event_id": "923e4567-e89b-12d3-a456-426614174008",
+      "event_type": "ORIGIN",
+      "parent_event_id": null,
+      "sequence": 1,
+      "timestamp": "2026-07-13T08:07:00Z",
+      "human_origin": "jaywisdom.eth",
+      "summary": "Disclosure violation",
+      "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_refs": [],
+      "disclosure_policy": "INVALID",
+      "is_simulated": true,
+      "authority": false
+    }
+  }
+]
