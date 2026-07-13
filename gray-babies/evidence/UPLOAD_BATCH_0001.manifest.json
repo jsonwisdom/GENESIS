@@ -1,0 +1,92 @@
+{
+  "manifest_id": "GRAY_BABIES_UPLOAD_BATCH_0001",
+  "status": "EVIDENCE_MANIFEST_ONLY",
+  "source": "user_uploaded_in_conversation",
+  "captured_at": null,
+  "repository_bytes_present": false,
+  "cryptographic_scope": "SHA-256 computed over the seven uploaded JPEG byte streams available in the active session",
+  "authority": false,
+  "fake_green": false,
+  "items": [
+    {
+      "sequence": 1,
+      "source_filename": "3DABE674-D6F8-4803-AD16-A3B41365F87F.jpeg",
+      "sha256": "ed3f075ab09ddf5e03963fbc5b41424a1485ca4cf70338d8fd7cf77aa4b7180e",
+      "bytes": 585876,
+      "width": 1536,
+      "height": 1024,
+      "observed_title": "GRAY BABY 007 — WITNESS FEEDBACK LOOP / GRAY BABY 008 — DISSENT PROTOCOL",
+      "handling": "visual evidence preserved; embedded claims not independently validated"
+    },
+    {
+      "sequence": 2,
+      "source_filename": "E0D7FAD8-F2CF-42AB-8CCC-6D6167BB50C9.jpeg",
+      "sha256": "4ad19ecc395e58a051234d37190c7e3efdf9c2db0f79b9f5c0ebcaf99df926d6",
+      "bytes": 511496,
+      "width": 1254,
+      "height": 1254,
+      "observed_title": "GRAY BABY 11 — THE ENFORCEMENT GAP",
+      "handling": "visual evidence preserved; policy statements remain narrative content"
+    },
+    {
+      "sequence": 3,
+      "source_filename": "ED276FAC-D81D-4CB0-A555-F172E93031EB.jpeg",
+      "sha256": "8206775efd0073a365d71bd4c207087d52d4bf7ef3e301ca7da19d08cd30817b",
+      "bytes": 510578,
+      "width": 1536,
+      "height": 1024,
+      "observed_title": "GRAY BABY MEDIA FILE 008 — DISSENT PROTOCOL",
+      "handling": "visual evidence preserved; protocol semantics remain unvalidated narrative design"
+    },
+    {
+      "sequence": 4,
+      "source_filename": "4F54C6B6-B882-426B-8DD5-72A9F23591F1.jpeg",
+      "sha256": "48cd8626e0f4cc51edc0d3e0ad81eb3172018baad07efd5bb07911de7f2c48d2",
+      "bytes": 257238,
+      "width": 1024,
+      "height": 1024,
+      "observed_title": "Untitled child-memory provenance image",
+      "handling": "visual evidence preserved; identity, source, and relationship labels remain unobserved"
+    },
+    {
+      "sequence": 5,
+      "source_filename": "04189FE1-36AC-4281-8789-76A020EE3B5C.jpeg",
+      "sha256": "439f356f8035f0704e58769c6d199cc2dd9a3dc843b32617df70637fd3946b3e",
+      "bytes": 699078,
+      "width": 1122,
+      "height": 1402,
+      "observed_title": "Memories can be shared without surrendering the child",
+      "handling": "visual evidence preserved; depicted family and system relationships are narrative"
+    },
+    {
+      "sequence": 6,
+      "source_filename": "B753822D-429B-4F5D-92DC-9605A8B85D79.jpeg",
+      "sha256": "ac781891cbc2681f539a9e63d2ccde79fb6b42db6e676d2fae150398dfc457c7",
+      "bytes": 365347,
+      "width": 1122,
+      "height": 1402,
+      "observed_title": "Untitled Gray Baby reaction portrait",
+      "handling": "visual evidence preserved; no narrative lineage inferred"
+    },
+    {
+      "sequence": 7,
+      "source_filename": "451327F3-7923-4C06-8016-28911D4EFA40.jpeg",
+      "sha256": "d096a2bc490f06654ef42cb5abc844283486db76035bdadc3f860a6e36162ff5",
+      "bytes": 688375,
+      "width": 1149,
+      "height": 1369,
+      "observed_title": "GRAY BABY SERIES X-FA26 — RESTON DROP",
+      "handling": "fictionalized/open-source narrative artwork; institutional, intelligence, and geopolitical statements are not validated facts"
+    }
+  ],
+  "boundaries": {
+    "image_bytes_committed_to_repository": false,
+    "manifest_committed_to_repository": true,
+    "lineage_assignment": "UNASSIGNED",
+    "parent_links": "UNOBSERVED",
+    "creator_attribution": "USER_SUPPLIED_JAY_WISDOM_CONTEXT_ONLY",
+    "chain_receipt": "NOT_CREATED",
+    "scientific_or_government_authority": false
+  },
+  "next_gate": "UPLOAD_EXACT_IMAGE_BYTES_AND_BIND_EACH_SHA256_TO_A_GBCS_v1_CAPSULE"
+}
