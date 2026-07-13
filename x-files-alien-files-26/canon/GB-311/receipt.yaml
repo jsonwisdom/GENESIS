@@ -1,0 +1,62 @@
+gb_id: GB-311
+title: "Receipt Baby vs. Hype Baby"
+series: "Gray Baby × Boomer Baby"
+status: CANDIDATE_FOR_CANON
+authority: FALSE
+claim_status: "Editorial interpretation"
+artifact_type: "Satirical Editorial Card"
+format: "50/50 Editorial Composite"
+evidence_tier: "1_visual_only"
+
+lineage:
+  canon_root: GB-001
+  parent: GB-310
+
+archetypes_introduced:
+  - Receipt Baby
+  - Hype Baby
+
+archetypes_used:
+  - Receipt Baby
+  - Hype Baby
+
+series_principle: "Verification > Narrative"
+
+narrative_summary: >-
+  Receipt Baby arrives with receipts, timestamps, reproducible evidence,
+  and an audit trail. Hype Baby arrives with gradients, engagement,
+  confidence, and Soon™. Both think they won the thread. Only one leaves
+  an evidence trail.
+
+tagline: "One brings receipts. One brings reach."
+
+image:
+  observation_status: locally_verified
+  format: PNG
+  dimensions: 1024x1536
+  sha256: 72e6c912a65ab2999af669696d7616449a99d29afad36b06d77d646f30afa3bc
+  repository_media_present: false
+  external_binding: pending
+  immutability_claim: false
+
+promotion_gates:
+  repository_receipt_present: true
+  repository_media_present: false
+  local_image_hash_reported: true
+  image_hash_independently_recomputed_in_repository: false
+  ipfs_binding: pending
+  zora_receipt: pending
+  farcaster_cast_hash: pending
+  canon_promotion: pending
+
+governance_boundary: >-
+  This receipt records the GB-311 candidate metadata and a reported local
+  image hash. The image bytes are not included in this commit, so the hash
+  is not independently replayable from the repository. No IPFS, Zora,
+  Farcaster, immutability, ownership, or authority claim is made.
+
+repository_anchor:
+  repository: jsonwisdom/GENESIS
+  branch: gb-311-three-layer-proposal
+  base_commit: 41b657661654a70e1e5bbb82358b4e72ef107b88
+  path: x-files-alien-files-26/canon/GB-311/receipt.yaml
