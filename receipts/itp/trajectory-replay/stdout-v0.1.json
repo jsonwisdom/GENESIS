@@ -1,0 +1,294 @@
+{
+  "verifier": "ITP_TRAJECTORY_REPLAY_VERIFIER_V0_1",
+  "scope": "SINGLE_TRAJECTORY_REPLAY_ONLY",
+  "state_validation_required": true,
+  "fixture_count": 4,
+  "passed_count": 4,
+  "failed_count": 0,
+  "replay_executed": true,
+  "payload_bytes_read": false,
+  "payload_recomputation_executed": false,
+  "authority": false,
+  "results": [
+    {
+      "name": "REPLAY-FIXTURE-001-full-canonical-trajectory",
+      "passed": true,
+      "checks": {
+        "state_validation_result": true,
+        "verdict": true,
+        "reason": true,
+        "state_error": true,
+        "replay_executed": true,
+        "trace_emitted": true,
+        "payload_bytes_read": true,
+        "payload_recomputation_executed": true,
+        "authority": true,
+        "ordered_event_ids": true,
+        "ordered_types": true,
+        "transition_count": true,
+        "start_event_id": true,
+        "end_event_id": true
+      },
+      "actual": {
+        "verdict": "REPLAY_VALID",
+        "reason": null,
+        "state_validation_result": "PASS",
+        "canonical_event_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5",
+          "e6",
+          "e7"
+        ],
+        "ordered_event_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5",
+          "e6",
+          "e7"
+        ],
+        "ordered_types": [
+          "ORIGIN",
+          "OBSERVATION",
+          "PRESSURE",
+          "DECISION",
+          "DRIFT",
+          "RECEIPT",
+          "OUTCOME"
+        ],
+        "transition_count": 6,
+        "start_event_id": "e1",
+        "end_event_id": "e7",
+        "trace": [
+          {
+            "step": 1,
+            "event_id": "e1",
+            "type": "ORIGIN",
+            "sequence": 1,
+            "parent_id": null,
+            "transition": "START",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 2,
+            "event_id": "e2",
+            "type": "OBSERVATION",
+            "sequence": 2,
+            "parent_id": "e1",
+            "transition": "e1→e2",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 3,
+            "event_id": "e3",
+            "type": "PRESSURE",
+            "sequence": 3,
+            "parent_id": "e2",
+            "transition": "e2→e3",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 4,
+            "event_id": "e4",
+            "type": "DECISION",
+            "sequence": 4,
+            "parent_id": "e3",
+            "transition": "e3→e4",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 5,
+            "event_id": "e5",
+            "type": "DRIFT",
+            "sequence": 5,
+            "parent_id": "e4",
+            "transition": "e4→e5",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 6,
+            "event_id": "e6",
+            "type": "RECEIPT",
+            "sequence": 6,
+            "parent_id": "e5",
+            "transition": "e5→e6",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 7,
+            "event_id": "e7",
+            "type": "OUTCOME",
+            "sequence": 7,
+            "parent_id": "e6",
+            "transition": "e6→e7",
+            "status": "ACCEPTED"
+          }
+        ],
+        "trace_emitted": true,
+        "replay_executed": true,
+        "payload_bytes_read": false,
+        "payload_recomputation_executed": false,
+        "authority": false
+      }
+    },
+    {
+      "name": "REPLAY-NEG-001-state-prerequisite-failed",
+      "passed": true,
+      "checks": {
+        "state_validation_result": true,
+        "verdict": true,
+        "reason": true,
+        "state_error": true,
+        "replay_executed": true,
+        "trace_emitted": true,
+        "payload_bytes_read": true,
+        "payload_recomputation_executed": true,
+        "authority": true
+      },
+      "actual": {
+        "verdict": "REPLAY_REJECTED",
+        "reason": "STATE_PREREQUISITE_FAILED",
+        "state_validation_result": "FAIL",
+        "state_error": "V007_SEQUENCE_NOT_CONTIGUOUS",
+        "trace": [],
+        "trace_emitted": false,
+        "replay_executed": false,
+        "payload_bytes_read": false,
+        "payload_recomputation_executed": false,
+        "authority": false
+      }
+    },
+    {
+      "name": "REPLAY-NEG-002-trace-order-mismatch",
+      "passed": true,
+      "checks": {
+        "state_validation_result": true,
+        "verdict": true,
+        "reason": true,
+        "state_error": true,
+        "replay_executed": true,
+        "trace_emitted": true,
+        "payload_bytes_read": true,
+        "payload_recomputation_executed": true,
+        "authority": true,
+        "canonical_event_ids": true,
+        "supplied_event_ids": true
+      },
+      "actual": {
+        "verdict": "REPLAY_REJECTED",
+        "reason": "TRACE_ORDER_MISMATCH",
+        "state_validation_result": "PASS",
+        "canonical_event_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5",
+          "e6",
+          "e7"
+        ],
+        "supplied_event_ids": [
+          "e1",
+          "e3",
+          "e2",
+          "e4",
+          "e5",
+          "e6",
+          "e7"
+        ],
+        "trace": [],
+        "trace_emitted": false,
+        "replay_executed": true,
+        "payload_bytes_read": false,
+        "payload_recomputation_executed": false,
+        "authority": false
+      }
+    },
+    {
+      "name": "REPLAY-NEG-003-transition-continuity-broken",
+      "passed": true,
+      "checks": {
+        "state_validation_result": true,
+        "verdict": true,
+        "reason": true,
+        "state_error": true,
+        "replay_executed": true,
+        "trace_emitted": true,
+        "payload_bytes_read": true,
+        "payload_recomputation_executed": true,
+        "authority": true,
+        "canonical_event_ids": true,
+        "accepted_step_count": true,
+        "failure_transition": true
+      },
+      "actual": {
+        "verdict": "REPLAY_REJECTED",
+        "reason": "TRANSITION_CONTINUITY_BROKEN",
+        "state_validation_result": "PASS",
+        "canonical_event_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5",
+          "e6",
+          "e7"
+        ],
+        "failure_transition": {
+          "from_event_id": "e3",
+          "to_event_id": "e5",
+          "required_parent_id": "e4",
+          "actual_parent_id": "e4"
+        },
+        "trace": [
+          {
+            "step": 1,
+            "event_id": "e1",
+            "type": "ORIGIN",
+            "sequence": 1,
+            "parent_id": null,
+            "transition": "START",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 2,
+            "event_id": "e2",
+            "type": "OBSERVATION",
+            "sequence": 2,
+            "parent_id": "e1",
+            "transition": "e1→e2",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 3,
+            "event_id": "e3",
+            "type": "PRESSURE",
+            "sequence": 3,
+            "parent_id": "e2",
+            "transition": "e2→e3",
+            "status": "ACCEPTED"
+          },
+          {
+            "step": 4,
+            "event_id": "e5",
+            "type": "DRIFT",
+            "sequence": 5,
+            "parent_id": "e4",
+            "transition": "e3→e5",
+            "status": "REJECTED"
+          }
+        ],
+        "trace_emitted": true,
+        "accepted_step_count": 3,
+        "replay_executed": true,
+        "payload_bytes_read": false,
+        "payload_recomputation_executed": false,
+        "authority": false
+      }
+    }
+  ]
+}
