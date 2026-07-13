@@ -1,0 +1,81 @@
+{
+  "verifier": "ITP_PAYLOAD_INTEGRITY_VERIFIER_V0_1",
+  "scope": "RAW_BYTE_PAYLOAD_INTEGRITY_ONLY",
+  "fixture_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "raw_buffer_read": true,
+  "text_decode_executed": false,
+  "normalization_executed": false,
+  "payload_recomputation_executed": true,
+  "payload_execution_executed": false,
+  "replay_executed": false,
+  "authority": false,
+  "results": [
+    {
+      "name": "PAYLOAD-POS-001-exact-raw-bytes",
+      "expected_valid": true,
+      "actual_valid": true,
+      "expected_error": null,
+      "actual_error": null,
+      "payload_bytes_read": true,
+      "recomputation_executed": true,
+      "actual_size": 19,
+      "actual_digest": "40cf0528d1a2d21ca3fa4f87a49d6ed213bf4847730b5ec0308e6f8eddbe1955",
+      "passed": true
+    },
+    {
+      "name": "PAYLOAD-NEG-001-missing-file",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "P001_PAYLOAD_FILE_NOT_FOUND",
+      "actual_error": "P001_PAYLOAD_FILE_NOT_FOUND",
+      "payload_bytes_read": false,
+      "recomputation_executed": false,
+      "actual_size": null,
+      "actual_digest": null,
+      "passed": true
+    },
+    {
+      "name": "PAYLOAD-NEG-002-unsupported-algorithm",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "P002_UNSUPPORTED_DIGEST_ALGORITHM",
+      "actual_error": "P002_UNSUPPORTED_DIGEST_ALGORITHM",
+      "payload_bytes_read": false,
+      "recomputation_executed": false,
+      "actual_size": null,
+      "actual_digest": null,
+      "passed": true
+    },
+    {
+      "name": "PAYLOAD-NEG-003-size-mismatch",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "P003_PAYLOAD_SIZE_MISMATCH",
+      "actual_error": "P003_PAYLOAD_SIZE_MISMATCH",
+      "payload_bytes_read": true,
+      "recomputation_executed": false,
+      "actual_size": 19,
+      "actual_digest": null,
+      "passed": true
+    },
+    {
+      "name": "PAYLOAD-NEG-004-digest-mismatch",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_error": "P004_PAYLOAD_DIGEST_MISMATCH",
+      "actual_error": "P004_PAYLOAD_DIGEST_MISMATCH",
+      "payload_bytes_read": true,
+      "recomputation_executed": true,
+      "actual_size": 19,
+      "actual_digest": "40cf0528d1a2d21ca3fa4f87a49d6ed213bf4847730b5ec0308e6f8eddbe1955",
+      "passed": true
+    }
+  ],
+  "source_commit": "485deda6753d7af6376ef9d5c570c64b1adfdce9",
+  "execution_observed": true,
+  "execution_exit_code": 0,
+  "runtime": "v24.16.0",
+  "receipt_scope": "OBSERVED_RAW_BYTE_PAYLOAD_INTEGRITY_EXECUTION"
+}
