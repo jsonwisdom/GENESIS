@@ -13,7 +13,7 @@ library PolicyValidation {
         bool hasRole;
         bool targetAllowed;
         bool selectorAllowed;
-        bool valueAllowed;
+        bool nonZeroValueAllowed;
         bool policyPresent;
         bool policyWellFormed;
         CallType callType;
@@ -31,7 +31,7 @@ library PolicyValidation {
     ) internal pure returns (bool) {
         if (!check.policyPresent || !check.policyWellFormed) return false;
         if (!check.hasRole || !check.targetAllowed || !check.selectorAllowed) return false;
-        if (!check.valueAllowed || value != 0) return false;
+        if (value != 0 && !check.nonZeroValueAllowed) return false;
         if (check.callType != CallType.CALL) return false;
         if (check.executionDelayConfig < EXECUTION_DELAY_MIN) return false;
         if (currentTime < check.executableAt) return false;
