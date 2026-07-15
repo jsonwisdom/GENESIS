@@ -1,0 +1,24 @@
+{
+  "receipt_id": "GENESIS-CHAIN-BINDING-001",
+  "technical_provenance": "COMMITTED_PENDING_EXTERNAL_REPLAY",
+  "authority": false,
+  "entries": [
+    {
+      "entry_id": "GB-009",
+      "repository": "jsonwisdom/AL",
+      "commit_sha": "5b90c1aefe6b0acfe15676a88c0eb9cb5ca39a58",
+      "canon_path": "x-files-alien-files-26/canon/gb-library/GB-009-replay-reston.md",
+      "file_sha256": "be82a1a478dd7d41563517c02b302bc089d5786dfb08133e5138f3ea0dc1645e",
+      "parent_verification_hash": "INIT_ROOT",
+      "verification_hash": "50559cb34cd9e96ae4257023bb6109efdca3995855c52d0cdc7aeecf8dad00fd"
+    },
+    {
+      "entry_id": "GB-010",
+      "repository": "jsonwisdom/AL",
+      "commit_sha": "1f02c3ede83281217bd090ad256fa123abff9cc2",
+      "canon_path": "x-files-alien-files-26/canon/gb-library/GB-010-continuity-casey.md",
+      "file_sha256": "66bcbf3b7ad61c21e691cbcec6eb927c03aea3624f51d76693fadf1c1d2d1481",
+      "parent_verification_hash": "50559cb34cd9e96ae4257023bb6109efdca3995855c52d0cdc7aeecf8dad00fd"
+    }
+  ]
+}
