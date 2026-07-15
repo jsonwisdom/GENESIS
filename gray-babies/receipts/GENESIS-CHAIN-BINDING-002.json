@@ -2,8 +2,8 @@
   "receipt_id": "GENESIS-CHAIN-BINDING-002",
   "schema_version": "2.0",
   "supersedes_receipt": "GENESIS-CHAIN-BINDING-001",
-  "technical_provenance": "COMMITTED_PENDING_EXTERNAL_REPLAY",
-  "canon_integrity": "PENDING_EXTERNAL_REPLAY",
+  "technical_provenance": "VERIFIED",
+  "canon_integrity": "RESTORED",
   "authority": false,
   "authority_state": {
     "status": false,
@@ -12,6 +12,16 @@
   "checks": {
     "placeholder_purge": true,
     "forbidden_literal": "[current master]"
+  },
+  "external_replay": {
+    "status": "PASS",
+    "parent_linkage": true,
+    "blob_identity": true,
+    "sha256_content_identity": true,
+    "receipt_structure": true,
+    "supersession_correctness": true,
+    "continuity": true,
+    "method": "Independent GitHub object fetch plus deterministic SHA-256 and verification-hash recomputation"
   },
   "entries": [
     {
