@@ -1,0 +1,37 @@
+{
+  "receipt_id": "GENESIS-CHAIN-BINDING-002",
+  "schema_version": "2.0",
+  "supersedes_receipt": "GENESIS-CHAIN-BINDING-001",
+  "technical_provenance": "COMMITTED_PENDING_EXTERNAL_REPLAY",
+  "canon_integrity": "PENDING_EXTERNAL_REPLAY",
+  "authority": false,
+  "authority_state": {
+    "status": false,
+    "gate_3": "BLOCKED"
+  },
+  "checks": {
+    "placeholder_purge": true,
+    "forbidden_literal": "[current master]"
+  },
+  "entries": [
+    {
+      "entry_id": "GB-009",
+      "repository": "jsonwisdom/AL",
+      "commit_sha": "5b90c1aefe6b0acfe15676a88c0eb9cb5ca39a58",
+      "canon_path": "x-files-alien-files-26/canon/gb-library/GB-009-replay-reston.md",
+      "file_sha256": "be82a1a478dd7d41563517c02b302bc089d5786dfb08133e5138f3ea0dc1645e",
+      "parent_verification_hash": "INIT_ROOT",
+      "verification_hash": "50559cb34cd9e96ae4257023bb6109efdca3995855c52d0cdc7aeecf8dad00fd"
+    },
+    {
+      "entry_id": "GB-010",
+      "repository": "jsonwisdom/AL",
+      "commit_sha": "3c24b8cb03c88bf08d3a8f2082d46b07bdffcf7f",
+      "canon_path": "x-files-alien-files-26/canon/gb-library/GB-010-continuity-casey.md",
+      "git_blob_sha1": "21e29178b5471e5c4a74805a725229b5e18746b0",
+      "file_sha256": "27136aed76d71c520176defcd81d66aec1af85f10b6eaec6b9ef5f184ac41304",
+      "parent_verification_hash": "50559cb34cd9e96ae4257023bb6109efdca3995855c52d0cdc7aeecf8dad00fd",
+      "verification_hash": "47b5fdcaec59bd8f80b4d65bdcafe975a54e7446bc4aa846df516bbabd25b429"
+    }
+  ]
+}
