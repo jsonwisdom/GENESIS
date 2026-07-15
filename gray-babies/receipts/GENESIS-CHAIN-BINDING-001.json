@@ -1,6 +1,6 @@
 {
   "receipt_id": "GENESIS-CHAIN-BINDING-001",
-  "technical_provenance": "COMMITTED_PENDING_EXTERNAL_REPLAY",
+  "technical_provenance": "PENDING_COMMITTED_REPLAY",
   "authority": false,
   "entries": [
     {
