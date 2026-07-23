@@ -1,0 +1,18 @@
+{
+  "algorithm": "sha256",
+  "leaf_order": [
+    "media/ensemble.png",
+    "metadata/ensemble.json",
+    "source/prompt.txt",
+    "LICENSE"
+  ],
+  "leaf_hashes": [
+    "8c946a83a3cdc10d5054c09e38eea1586d7349e81ed3a58d87a906d4ea025587",
+    "55db270c277574609c133da884c648f4924cf068fa414180b598d8ecd4f603d0",
+    "b4e319dd11b6906d2eafa85c1b7081b14397038db247009d6150483a6a6ab036",
+    "5c31fdc76bb7b74012143318ae590d0c5ddc37c1e9aac50415da2e85e22ddd80"
+  ],
+  "merkle_root": "905a9553d14a229fa0522f27baaff0a2f0c5cbebd942c15ef741e000ffb867a1",
+  "odd_node_rule": "duplicate_last",
+  "authority": false
+}

@@ -1,0 +1,84 @@
+name: verify-xfa26-package
+
+on:
+  pull_request:
+    paths:
+      - 'x-files-alien-files-26/**'
+      - '.github/workflows/verify-xfa26-package.yml'
+      - '.github/workflows/replay-eas-base.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: x-files-alien-files-26
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required files
+        run: |
+          set -euo pipefail
+          test -f media/ensemble.png
+          test -f metadata/ensemble.json
+          test -f source/prompt.txt
+          test -f LICENSE
+          test -f receipts/merkle_root.txt
+          test -f receipts/merkle_proof.json
+
+      - name: Recompute four-leaf Merkle root
+        run: |
+          set -euo pipefail
+          python3 scripts/merkle_proof.py \
+            --files media/ensemble.png metadata/ensemble.json source/prompt.txt LICENSE \
+            --root-output /tmp/recomputed-root.txt
+          diff -u receipts/merkle_root.txt /tmp/recomputed-root.txt
+
+      - name: Verify recorded media hash
+        run: |
+          set -euo pipefail
+          EXPECTED="$(python3 - <<'PY'
+          import json
+          print(json.load(open('metadata/ensemble.json'))['media_sha256'])
+          PY
+          )"
+          ACTUAL="$(sha256sum media/ensemble.png | awk '{print $1}')"
+          test "$EXPECTED" = "$ACTUAL"
+
+      - name: Emit narrow status
+        run: |
+          echo 'PACKAGE_HASH_REPRODUCTION=PASS'
+          echo 'ONCHAIN_EAS_REPLAY=SEPARATE_JOB'
+          echo 'ZORA_PACKAGE_BINDING=NOT_TESTED'
+          echo 'AUTHORITY=false'
+
+  replay-eas:
+    runs-on: ubuntu-latest
+    env:
+      BASE_RPC_URL: https://mainnet.base.org
+      EAS_CONTRACT: 0x4200000000000000000000000000000000000021
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Execute Base EAS replay
+        working-directory: x-files-alien-files-26
+        run: |
+          chmod +x scripts/verify-eas-onchain.sh
+          scripts/verify-eas-onchain.sh
+
+      - name: Upload replay receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eas-onchain-replay-${{ github.sha }}
+          path: x-files-alien-files-26/receipts/eas-onchain-replay-0001.log
+          if-no-files-found: error

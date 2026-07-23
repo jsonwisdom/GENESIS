@@ -1,0 +1,21 @@
+{
+  "uid": "0x53702b09e5f866035cebccb5d353b7007a8a50e693cc194cf77c37519e7c372e",
+  "schema_uid": "0x3a194d8c0582a292939f7525a2be8366c87a2993058844e9b0ea07269610b80a",
+  "schema_number": 1688,
+  "attester": "0xC345B26094c63C69222Ee775189a3d3eaead5a84",
+  "recipient": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "transaction_hash": "0xc854c7523826f43a7c858edd176218bc7f2326aed9e7e2fffb02912d5c5fc9ff",
+  "chain_id": 8453,
+  "artifact": "Baby Gray Ensemble Package v1",
+  "cid": "bafybeihukshdcu2bts6qwbbpljhpbttvhdp72fdgwnraomhclhjpkjksci",
+  "package_sha256": "0x8c946a83a3cdc10d5054c09e38eea1586d7349e81ed3a58d87a906d4ea025587",
+  "merkle_root": "0x905a9553d14a229fa0522f27baaff0a2f0c5cbebd942c15ef741e000ffb867a1",
+  "commit_sha": "fd1723ffdf838a3e136368f99a6425582d6e5c8a",
+  "verification_log_sha256": "0x5c3d4c478e8fd787c52b519a9ddc9935bcd2abeb2c0a066747a054433fa0e5de",
+  "expiration": "never",
+  "revocable": true,
+  "revoked": false,
+  "referenced_attestation": null,
+  "observation_status": "DECLARED_FROM_EASSCAN_OUTPUT",
+  "authority": false
+}

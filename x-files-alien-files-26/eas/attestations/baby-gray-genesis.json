@@ -1,0 +1,14 @@
+{
+  "uid": "0xec9a29523f3ed0aac4e199ea6e34d07bf0ce015220678edde71444ff0230f1c8",
+  "schema_uid": "0x0fffbc9973d10dbd45c605272968227933d6ea9af9f5d2d45c03dd8e0c1e4b2d",
+  "schema_number": 1684,
+  "attester": "0xC345B26094c63C69222Ee775189a3d3eaead5a84",
+  "recipient": "0xA380552a27b0a5a2874Ea7AA52CAC09f542002E8",
+  "transaction_hash": "0x749ac76bf5f5c931bd75a70a234a83e16ccf3ae4ae894f9a29ea7a35519a83e7",
+  "artifact_uri": "ipfs://bafybeifetkgu77nx6gabaoptv6hl3rj2yvhdbv6l3dn4spq66f44kzzw4m",
+  "revocable": true,
+  "revoked": false,
+  "referenced_attestation": null,
+  "observation_status": "DECLARED_FROM_EASSCAN_OUTPUT",
+  "authority": false
+}
